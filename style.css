@@ -198,6 +198,7 @@ input:focus {
   padding-top: 1rem;
   border-top: 2px solid var(--secondary);
   user-select: contain;
+  -webkit-user-select: contain;
 }
 
 .controls {

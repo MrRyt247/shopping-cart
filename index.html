@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
+        <link rel="shortcut icon/png" href="./assets/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Shopping Cart</title>
 </head>
@@ -39,19 +40,19 @@
                     </button>
                 </div>
             </div>
-
             <div id="cartItems" role="list" aria-label="Shopping cart items">
+                <p>No items in cart</p>
                 <!-- Cart items will be added here -->
             </div>
 
             <div class="aggregate-wrapper">
-                <div class="aggregate" aria-live="discount">
+                <div class="aggregate" aria-live="polite">
                     Discount:
                     <input type="number" id="itemDiscount" min="0" value="0" aria-label="Discount" placeholder="25%"
                         required>%
                 </div>
                 <div class="aggregate" aria-live="polite">
-                    Total: <span id="cartTotal">0.00</span>
+                    Total: <span id="cartTotal">GH₵0.00</span>
                 </div>
             </div>
 
