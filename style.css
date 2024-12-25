@@ -3,9 +3,10 @@
   --secondary: #0e5d1b;
   --red: #dc3545;
   --red-alt: #c01616;
-  --bg-color: #fff;
-  --fg-color: #eee;
-  color-scheme: light-dark;
+  --bg-color: #eee;
+  --fg-color: #ddd;
+  --font-color: #000;
+  color-scheme: light dark;
 }
 
 *,
@@ -16,14 +17,14 @@
 
 body {
   width: 100vw;
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
   font-family: Arial, sans-serif;
   overflow: hidden visible;
 }
 
 ::-webkit-scrollbar {
   width: 5px;
-  background-color: #eee;
+  background-color: var(--bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -46,15 +47,13 @@ header {
   margin: 0 auto;
   padding: 20px;
   background-color: var(--bg-color);
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .item {
   display: flex;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--font-color);
 }
 
 .item:last-child {
@@ -114,9 +113,10 @@ button.remove:hover {
 
 #sessionTitle {
   width: 100%;
-  padding: 2px;
+  padding: 2px 0;
   text-align: center;
   font-size: 1.25rem;
+  box-sizing: border-box;
 }
 
 input[type="text"],
@@ -165,7 +165,8 @@ input:focus {
 }
 
 .session:hover {
-  background-color: #e9ecef;
+  background-color: var(--fg-color);
+  filter: brightness(0.8);
 }
 
 .session-details {
@@ -221,7 +222,18 @@ footer {
 @media screen and (max-width: 770px) {
   .container {
     padding: 1.25rem;
-    border-radius: unset;
-    box-shadow: unset;
+  }
+
+  /* Removing scrollbar */
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #111;
+    --fg-color: #222;
+    --font-color: #fff;
   }
 }

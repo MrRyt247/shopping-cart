@@ -20,9 +20,7 @@
     </header>
     <main class="container">
         <div class="controls">
-            <button id="newSession" aria-label="Start new shopping session">
-                <i class="fas fa-plus"></i> New Session
-            </button>
+
         </div>
 
         <div id="currentSession">
@@ -44,9 +42,16 @@
                 <!-- Cart items will be added here -->
             </div>
 
+            <div class="discount" aria-live="discount">
+                Total: ₵<span id="cartTotal">0.00</span>
+            </div>
             <div class="total" aria-live="polite">
                 Total: ₵<span id="cartTotal">0.00</span>
             </div>
+
+            <button id="newSession" aria-label="Start new shopping session">
+                <i class="fas fa-plus"></i> New Session
+            </button>
         </div>
 
 

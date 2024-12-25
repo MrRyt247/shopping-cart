@@ -124,8 +124,8 @@ $(document).ready(function () {
   });
 
   // Toggle session history
-  $(document).on("click", ".history-section", function () {
-    $(this).find("#sessionHistory").slideToggle();
+  $(document).on("click", ".controls h2", function () {
+    $("#sessionHistory").slideToggle();
     $(".fa-angle-down").toggleClass("rotate");
   });
 
@@ -169,7 +169,7 @@ $(document).ready(function () {
             <div class="session">
                 <h3>
                     <i class="fas fa-shopping-bag"></i> 
-                    ${session.date} - GH₵${session.total.toFixed(2)}
+                    ${session.date} - ₵${session.total.toFixed(2)}
                 </h3>
                 <div class="session-details">
                     ${session.items
@@ -179,7 +179,7 @@ $(document).ready(function () {
                             <div class="item-details">
                                 <strong>${item.name}</strong>
                                 <br>
-                                GH₵${item.price.toFixed(2)} x ${item.quantity}
+                                ₵${item.price.toFixed(2)} x ${item.quantity}
                             </div>
                         </div>
                     `
