@@ -105,7 +105,7 @@ $(document).ready(function () {
   });
 
   // New session button
-  $("#newSession").click(function () {
+  $("#endSession").click(function () {
     createNewSession();
   });
 
@@ -212,7 +212,7 @@ $(document).ready(function () {
 
   function showAlert(message) {
     const alert = $(`<div role="alert">${message}</div>`);
-    $(".controls").first().after(alert);
+    $("#currentSession").before(alert);
     setTimeout(
       () =>
         alert.fadeOut("slow", function () {

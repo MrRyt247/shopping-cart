@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A simple webapp to track and monitor shopping purchases">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Shopping Cart</title>
 </head>
@@ -19,10 +23,6 @@
         </h1>
     </header>
     <main class="container">
-        <div class="controls">
-
-        </div>
-
         <div id="currentSession">
             <div class="add-session-form">
                 <input type="text" id="sessionTitle" placeholder="Title (Location/Season)" aria-label="Session title"
@@ -42,18 +42,21 @@
                 <!-- Cart items will be added here -->
             </div>
 
-            <div class="discount" aria-live="discount">
-                Total: ₵<span id="cartTotal">0.00</span>
-            </div>
-            <div class="total" aria-live="polite">
-                Total: ₵<span id="cartTotal">0.00</span>
+            <div class="aggregate-wrapper">
+                <div class="aggregate" aria-live="discount">
+                    Discount: 
+                    <input type="number" id="itemDiscount" min="0" value="0"
+                        aria-label="Discount" required>%
+                </div>
+                <div class="aggregate" aria-live="polite">
+                    Total: ₵<span id="cartTotal">0.00</span>
+                </div>
             </div>
 
-            <button id="newSession" aria-label="Start new shopping session">
-                <i class="fas fa-plus"></i> New Session
+            <button id="endSession" aria-label="End shopping session">
+                <i class="fas fa-plus"></i> End Session
             </button>
         </div>
-
 
         <div class="history-section">
             <div class="controls">

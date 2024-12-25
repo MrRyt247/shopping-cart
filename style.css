@@ -18,8 +18,13 @@
 body {
   width: 100vw;
   background-color: var(--bg-color);
-  font-family: Arial, sans-serif;
+  font-family: Afacad, Helvetica, Arial, sans-serif;
   overflow: hidden visible;
+}
+
+button,
+input {
+  font-family: Afacad, Helvetica, Arial, sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -33,7 +38,7 @@ body {
 }
 
 header {
-  padding: 1rem 3rem;
+  padding: 1rem;
   background-color: var(--primary);
   color: white;
 
@@ -41,6 +46,10 @@ header {
     text-align: center;
   }
 }
+
+/* .log {
+
+} */
 
 .container {
   max-width: 1000px;
@@ -106,7 +115,7 @@ button.remove:hover {
 .add-item-form {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
   padding: 4px;
   column-gap: clamp(0.2rem, 2vw, 3rem);
 }
@@ -122,19 +131,30 @@ button.remove:hover {
 input[type="text"],
 input[type="number"] {
   width: 100%;
-  padding: 8px;
+  padding: 2px 8px;
   border: none;
   border-bottom: 2px solid var(--primary);
+  background-color: var(--bg-color);
+  font-size: 1.25rem;
   position: relative;
 }
 
 input[placeholder="₵"] {
   max-width: 4rem;
+  text-align: end;
 }
 
 input[placeholder="Quantity"],
 .quantity {
   max-width: 2.4rem;
+  text-align: end;
+}
+
+input[id="itemDiscount"],
+.quantity {
+  max-width: 3rem;
+  padding: 2px;
+  text-align: end;
 }
 
 input:focus {
@@ -142,22 +162,52 @@ input:focus {
   outline-offset: 2px;
 }
 
-.total {
-  margin-top: 20px;
-  text-align: right;
+.aggregate-wrapper {
+  height: 2.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  border-top: 2px solid var(--secondary);
+}
+
+.aggregate {
   font-size: 1.2em;
   font-weight: bold;
 }
 
+#endSession {
+  margin: 1rem auto;
+}
+
 .history-section {
-  margin-top: 30px;
-  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding-top: 1rem;
   border-top: 2px solid var(--secondary);
   user-select: contain;
 }
 
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  cursor: pointer;
+}
+
+#sessionHistory {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
 .session {
-  margin: 10px 0;
   padding: 15px;
   background-color: var(--fg-color);
   border-radius: 8px;
@@ -171,13 +221,6 @@ input:focus {
 
 .session-details {
   display: none;
-  margin-top: 10px;
-}
-
-.controls {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
 }
 
 .sr-only {
