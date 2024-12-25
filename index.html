@@ -5,7 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple webapp to track and monitor shopping purchases">
+    <meta name="description"
+        content="A simple webapp to track and monitor shopping purchases instead of relying on calculator">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +20,8 @@
 <body>
     <header>
         <h1>
-            Shopping Cart
             <i class="fas fa-shopping-cart"></i>
+            Shopping Cart
         </h1>
     </header>
     <main class="container">
@@ -44,9 +46,8 @@
 
             <div class="aggregate-wrapper">
                 <div class="aggregate" aria-live="discount">
-                    Discount: 
-                    <input type="number" id="itemDiscount" min="0" value="0"
-                        aria-label="Discount" required>%
+                    Discount:
+                    <input type="number" id="itemDiscount" min="0" value="0" aria-label="Discount" required>%
                 </div>
                 <div class="aggregate" aria-live="polite">
                     Total: <span id="cartTotal">0.00</span>

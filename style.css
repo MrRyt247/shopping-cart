@@ -38,18 +38,18 @@ input {
 }
 
 header {
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   background-color: var(--primary);
   color: white;
 
   h1 {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .5rem;
   }
 }
-
-/* .log {
-
-} */
 
 .container {
   max-width: 1000px;
@@ -110,6 +110,11 @@ button.remove {
 
 button.remove:hover {
   background-color: var(--red-alt);
+}
+
+#currentSession {
+  max-width: 768px;
+  margin: auto;
 }
 
 .add-item-form {
@@ -216,7 +221,7 @@ h2 {
 
 .session:hover {
   background-color: var(--fg-color);
-  filter: brightness(0.8);
+  filter: brightness(0.85);
 }
 
 .session-details {
@@ -275,8 +280,8 @@ footer {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #111;
-    --fg-color: #222;
+    --bg-color: #1e1e1e;
+    --fg-color: #2d2d2d;
     --font-color: #fff;
   }
 }

@@ -254,7 +254,14 @@ $(document).ready(function () {
                                   ${formatCurrency.format(
                                     item.price * (1 - session.discount * 0.01)
                                   )} x ${item.quantity}
-                            <del>(${formatCurrency.format(item.price)})</del>
+                                   ${
+                                     session.discount > 0
+                                       ? `<del>(${formatCurrency.format(
+                                           item.price
+                                         )})</del>`
+                                       : ""
+                                   }
+                            
                               </div>
                           </div>
                       `
