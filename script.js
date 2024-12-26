@@ -1,11 +1,11 @@
-// Formatter for currency
+// Currency Format
 const formatCurrency = new Intl.NumberFormat("en-GH", {
   style: "currency",
   currency: "GHS",
   minimumFractionDigits: 2,
 });
 
-// Format date to word short format
+// Date Format
 function formatDate(date) {
   return new Date(date).toLocaleDateString("en-US", {
     weekday: "short",
@@ -13,6 +13,15 @@ function formatDate(date) {
     month: "short",
     year: "numeric",
   });
+}
+
+// Filtering input
+function sanitizeInput(el) {
+  return el
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;");
 }
 
 $(document).ready(function () {
@@ -69,7 +78,7 @@ $(document).ready(function () {
     if (cart.length === 0) return;
 
     const sessions = loadFromStorage();
-    const sessionTitle = $("#sessionTitle").val();
+    const sessionTitle = sanitizeInput($("#sessionTitle").val());
     const discount = parseInt($("#itemDiscount").val()) || 0;
     const total = calculateTotal();
     const discountedTotal = total * (1 - discount / 100);
@@ -104,7 +113,7 @@ $(document).ready(function () {
 
   // Add item to cart
   $("#addItem").click(function () {
-    const name = $("#itemName").val();
+    const name = sanitizeInput($("#itemName").val());
     const price = parseFloat($("#itemPrice").val());
     const quantity = parseInt($("#itemQuantity").val());
 
